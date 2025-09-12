@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white mt-14">
+    <div className="min-h-screen flex flex-col bg-black text-white pt-14">
       {/* ---------- Top Section ---------- */}
       <div className="flex flex-col items-center md:justify-center md:flex-1 px-4 sm:px-6">
         {/* Toggle */}
