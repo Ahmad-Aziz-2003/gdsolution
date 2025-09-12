@@ -1,97 +1,159 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Loader2 } from "lucide-react"; // spinner
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
+
+    // Remove error when user types
+    setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    alert('Message sent successfully!');
-    setFormData({ name: '', email: '', message: '' });
+  const validate = () => {
+    let newErrors: { [key: string]: string } = {};
+    if (!formData.name) newErrors.name = "Name is required.";
+    if (!formData.email) newErrors.email = "Email is required.";
+    if (!formData.message) newErrors.message = "Message is required.";
+    return newErrors;
+  };
+
+  const handleSubmit = async () => {
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await new Promise((res) => setTimeout(res, 2000)); // fake API call
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+
+      // ✅ 3 sec baad message hide ho jaye
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-start px-4 sm:px-6 lg:px-16 py-48">
-      {/* Main Heading */}
+    <div className="relative min-h-screen bg-black text-white flex flex-col items-center justify-start px-4 sm:px-6 lg:px-16 py-48">
       <div className="text-center mb-24 w-full">
-        <h1 className="text-5xl md:text-6xl font-light tracking-wide mb-6">Contact Us</h1>
+        <h1 className="text-5xl md:text-6xl font-light tracking-wide mb-6">
+          Contact Us
+        </h1>
         <p className="text-offwhite text-lg max-w-2xl mx-auto">
-          We would love to hear from you! Please fill out the form and our team will get back to you shortly.
+          We would love to hear from you! Please fill out the form and our team
+          will get back to you shortly.
         </p>
       </div>
 
-      {/* Content Container */}
-      <div className="max-w-8xl grid grid-cols-1 lg:grid-cols-2 gap-0 items-start gap-8 md:gap-6 lg:gap-0">
-        {/* Left Section */}
+      <div className="max-w-8xl grid grid-cols-1 lg:grid-cols-2 items-start gap-8 md:gap-6 lg:gap-0">
         <div className="flex flex-col justify-center space-y-6">
-          <h2 className="text-3xl md:text-5xl ">Please fill out the contact form</h2>
+          <h2 className="text-3xl md:text-5xl ">
+            Please fill out the contact form
+          </h2>
           <p className="text-offwhite text-lg leading-relaxed max-w-3xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus sagittis sagittis et volutpat 
-            scelerisque rutrum. Mi augue non neque sed.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
 
-        {/* Right Section - Contact Form */}
-        <div className="flex justify-center ">
+        <div className="flex justify-center">
           <div className="w-full max-w-md bg-black rounded-2xl border border-white p-10">
             <div className="space-y-6">
-              {/* Name */}
               <div>
-                <label className="block text-sm font-medium mb-2 text-white">Your Name</label>
+                <label className="block text-sm font-medium mb-2 text-white">
+                  Your Name
+                </label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 bg-black border border-white rounded-lg text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
+                  className="w-full px-4 py-3 bg-black border border-white rounded-full text-white placeholder-white placeholder:font-light  focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                )}
               </div>
 
-              {/* Email */}
               <div>
-                <label className="block text-sm font-medium mb-2 text-white">Email Address</label>
+                <label className="block text-sm font-medium mb-2 text-white">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 bg-black border border-white rounded-lg text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
+                  className="w-full px-4 py-3 bg-black border border-white rounded-full text-white placeholder-white placeholder:font-light  focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
               </div>
 
-              {/* Message */}
               <div>
-                <label className="block text-sm font-medium mb-2 text-white">Message</label>
+                <label className="block text-sm font-medium mb-2 text-white">
+                  Message
+                </label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Hi, I am just wondering where can...."
                   rows={5}
-                  className="w-full px-4 py-3 bg-black border border-white rounded-lg text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-black border border-white rounded-3xl text-white placeholder-white placeholder:font-light  focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors resize-none"
                 />
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
               </div>
 
-              {/* Submit */}
               <button
                 onClick={handleSubmit}
-                className="w-full py-3 bg-gradient-to-b from-[#5C5FFE] to-[#A3A5FF] rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-b from-[#5C5FFE] to-[#A3A5FF] rounded-lg font-medium transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
               >
-                Send Message
+                {loading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>Send Message</>
+                )}
               </button>
+
+              {/* ✅ Success Message after submit */}
+              {submitted && !loading && (
+                <p className="text-green-400 text-center font-medium mt-4">
+                  🎉 Your message has been successfully submitted!
+                </p>
+              )}
             </div>
           </div>
         </div>
