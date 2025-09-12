@@ -8,67 +8,52 @@ const sections = [
   {
     title: "1. Information We Collect",
     content: (
-      <>
-        <p>We may collect the following information:</p>
-        <ul className="ml-6 space-y-2 list-disc">
-          <li>
-            Personal identification information (name, email address, phone
-            number)
-          </li>
-          <li>
-            Usage data and analytics to understand how you interact with our
-            services
-          </li>
-          <li>
-            Technical information such as IP address, browser type, and
-            operating system
-          </li>
-        </ul>
-      </>
+      <p>
+        We may collect the following information:
+        <br />
+        Personal Information: Name, email address, phone number, company name (when booking a consultation or contacting us).
+        <br />
+        Business Data: Any details you share with us to help us build and customize AI agents for your workflows.
+        <br />
+        Usage Data: IP address, browser type, device information, and pages visited on our site.
+      </p>
     ),
   },
   {
     title: "2. How We Use Your Information",
     content: (
-      <>
-        <p>We use the collected information to:</p>
-        <ul className="ml-6 space-y-2 list-disc">
-          <li>Provide, operate, and maintain our services</li>
-          <li>Improve and personalize your experience</li>
-          <li>Respond to your inquiries, comments, or support requests</li>
-          <li>
-            Send you updates, marketing communications, and promotional
-            materials
-          </li>
-          <li>Analyze usage patterns to improve our services</li>
-        </ul>
-      </>
+      <p>
+        We use the collected information to:
+        <br />
+        - Provide and improve our AI automation services.
+        <br />
+        - Respond to your inquiries, consultations, or support requests.
+        <br />
+        - Send service updates, offers, or newsletters (optional and opt-out anytime).
+        <br />
+        - Ensure the security and proper functioning of our website.
+      </p>
     ),
   },
   {
     title: "3. Sharing of Information",
     content: (
-      <>
-        <p>
-          We do not sell your personal information. However, we may share
-          information in certain circumstances:
-        </p>
-        <ul className="ml-6 space-y-2 list-disc">
-          <li>With service providers who help us operate our services</li>
-          <li>To comply with legal obligations or court orders</li>
-          <li>To protect our rights and prevent fraud or illegal activities</li>
-        </ul>
-      </>
+      <p>
+        We do not sell or rent your personal information.
+        <br />
+        We may share information only with:
+        <br />
+        - Trusted partners/service providers who help deliver our services.
+        <br />
+        - Legal authorities if required to comply with applicable laws.
+      </p>
     ),
   },
   {
     title: "4. Cookies & Tracking",
     content: (
       <p>
-        Our website uses cookies to improve your browsing experience, track site
-        performance, and understand user behavior. You may choose to accept or
-        decline cookies through your browser settings, but this may affect your
-        user experience.
+        Our website uses cookies to improve your browsing experience, track site performance, and understand user behavior. You may disable cookies in your browser settings, but some features may not function properly.
       </p>
     ),
   },
@@ -76,32 +61,31 @@ const sections = [
     title: "5. Data Security",
     content: (
       <p>
-        We implement industry-standard measures to protect your information from
-        unauthorized access, loss, or misuse. However, no online system is 100%
-        secure.
+        We use industry-standard measures to safeguard your information from unauthorized access, loss, or misuse. However, no online transmission or storage method is 100% secure.
       </p>
     ),
   },
   {
     title: "6. Your Rights",
     content: (
-      <>
-        <p>You have the right to:</p>
-        <ul className="ml-6 space-y-2 list-disc">
-          <li>Access the personal information we hold about you</li>
-          <li>Request corrections to your personal information</li>
-          <li>Request deletion of your data subject to legal requirements</li>
-          <li>Opt out of marketing communications at any time</li>
-        </ul>
-      </>
+      <p>
+        You have the right to:
+        <br />
+        - Access the personal information we hold about you.
+        <br />
+        - Request corrections or updates to your information.
+        <br />
+        - Request deletion of your data, subject to legal requirements.
+        <br />
+        - Opt out of receiving marketing communications at any time.
+      </p>
     ),
   },
   {
     title: "7. Third-Party Links",
     content: (
       <p>
-        Our website may link to third-party sites. We are not responsible for
-        the privacy practices of these external websites.
+        Our website may link to third-party sites. We are not responsible for the privacy practices of these external websites.
       </p>
     ),
   },
@@ -109,8 +93,7 @@ const sections = [
     title: "8. Updates to This Policy",
     content: (
       <p>
-        We may update this Privacy Policy from time to time. Updated versions
-        will be posted on this page with an effective date.
+        We may update this Privacy Policy from time to time. Updates will be posted here with a new effective date.
       </p>
     ),
   },
@@ -119,7 +102,7 @@ const sections = [
 const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ className = "" }) => {
   return (
     <div
-      className={`bg-black  text-white min-h-screen py-48 px-4 sm:px-6 lg:px-8 ${className}`}
+      className={`bg-black text-white min-h-screen py-48 px-4 sm:px-6 lg:px-8 ${className}`}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -138,7 +121,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ className = "" }) => {
         <div className="space-y-12">
           {sections.map((section, index) => (
             <section key={index}>
-              <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl mb-4">
                 {section.title}
               </h2>
               <div className="text-offwhite space-y-4 text-sm sm:text-base leading-relaxed">

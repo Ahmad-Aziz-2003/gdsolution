@@ -16,7 +16,7 @@ const ServiceHeader = () => {
 
       <div className="max-w-4xl mx-auto mt-24 mb-16 text-center relative z-10 flex flex-col items-center justify-center gap-6">
         {/* About Us Badge */}
-        <IconButton icon="/setting.svg" text="service" className="w-40" />
+        <IconButton icon="/setting.svg" text="Services" className="w-40" />
 
         {/* Main Heading */}
         <h1 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-light leading-tight">

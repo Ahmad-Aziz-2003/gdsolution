@@ -12,7 +12,7 @@ interface FeatureListItemProps {
 // Single Feature Item
 const FeatureListItem: React.FC<FeatureListItemProps> = ({ icon, title, description }) => {
   return (
-    <div className="flex flex-col items-start space-y- p-4 lg:p-2">
+    <div className="flex flex-col items-start space-y- p-4 lg:p-2 gap-1 sm:gap-3">
       {/* Icon + Title in one line */}
       <div className="flex items-center gap-1">
         <Image

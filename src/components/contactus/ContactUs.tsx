@@ -58,7 +58,7 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col items-center justify-start px-4 sm:px-6 lg:px-16 py-48">
+    <div className="relative min-h-screen bg-black text-white flex flex-col items-center justify-start px-4 sm:px-6 lg:px-16 py-40">
       <div className="text-center mb-24 w-full">
         <h1 className="text-5xl md:text-6xl font-light tracking-wide mb-6">
           Contact Us
@@ -75,7 +75,7 @@ export default function ContactUs() {
             Please fill out the contact form
           </h2>
           <p className="text-offwhite text-lg leading-relaxed max-w-3xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          We’re here to help! Share your message, and we’ll get back to you promptly.
           </p>
         </div>
 

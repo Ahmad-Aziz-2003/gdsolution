@@ -38,7 +38,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
     <div className="relative p-6 rounded-2xl overflow-hidden border border-white/10">
       {/* Top Gradient Border */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[3px] z-20"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1.3px] z-20"
         style={{
           background:
             "linear-gradient(90deg, rgba(92, 95, 254, 0) 0%, #5C5FFE 50%, rgba(92, 95, 254, 0) 100%)",

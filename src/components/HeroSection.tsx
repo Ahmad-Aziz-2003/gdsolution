@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import IconButton from "./IconButton";
 import Image from "next/image";
-
+import Link from "next/link";
 const HeroSection: React.FC = () => {
   const [isAgents, setIsAgents] = useState<boolean>(true);
 
@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
 
         {/* Heading */}
         <div className="text-center max-w-4xl sm:max-w-6xl px-2 sm:px-0">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl leading-tight">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl leading-tight">
             <span className="block bg-gradient-to-r from-white to-white/30 bg-clip-text text-transparent tracking-[-2px] sm:tracking-[-3.8px]">
               AI Automation,
             </span>
@@ -74,9 +74,11 @@ const HeroSection: React.FC = () => {
           <h2 className="text-[#FFFFFF99] text-sm sm:text-base lg:text-lg font-light leading-relaxed mb-4 sm:mb-6">
             We build custom AI agents to automate repetitive business tasks — saving you time, reducing costs, and improving efficiency.
           </h2>
+          <Link href='/contact-us'>
           <button className="cursor-pointer backdrop-blur-md bg-white/20 text-white font-medium rounded-md px-6 sm:px-10 py-2 sm:py-3 text-sm sm:text-base transition duration-200 hover:bg-white/30">
             Contact us
           </button>
+          </Link>
         </div>
 
         {/* Infinite Scrolling Brands */}

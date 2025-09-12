@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
                 className="h-auto"
               />
             </div>
-            <p className="text-gray-400 text-base max-w-sm leading-relaxed">
+            <p className="text-white text-base max-w-sm leading-relaxed">
               AI-powered automation for <br />
               smarter, faster business
             </p>

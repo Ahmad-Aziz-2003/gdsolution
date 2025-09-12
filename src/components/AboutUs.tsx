@@ -4,7 +4,7 @@ import IconButton from "./IconButton";
 
 const AboutUs = () => {
   return (
-    <section className="h-full bg-black flex items-center min-h-[80vh] justify-center px-4 relative overflow-hidden">
+    <section className=" bg-black flex items-center h-full md:min-h-[80vh] justify-center px-4 relative overflow-hidden">
       {/* Subtle grid pattern overlay */}
       <div className="absolute inset-0 opacity-10">
         <div
