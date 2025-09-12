@@ -118,7 +118,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       <div className="relative z-10 p-8 flex flex-col items-center text-center h-full">
         {/* Fixed Thunder Icon */}
         <div className="mb-6 p-3 rounded-full bg-gradient-to-b from-[#5C5FFE] to-[#A3A5FF]">
-          <Zap className="w-8 h-8 text-white" strokeWidth={2.5} />
+          <Zap className="w-6 h-6 text-white" strokeWidth={2.5} />
         </div>
 
         {/* Title */}

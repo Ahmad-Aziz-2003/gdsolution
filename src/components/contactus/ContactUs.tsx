@@ -136,7 +136,7 @@ export default function ContactUs() {
               <button
                 onClick={handleSubmit}
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-b from-[#5C5FFE] to-[#A3A5FF] rounded-lg font-medium transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
+                className="w-full flex cursor-pointer items-center justify-center gap-2 py-3 bg-gradient-to-b from-[#5C5FFE] to-[#A3A5FF] rounded-lg font-medium transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
               >
                 {loading ? (
                   <>
