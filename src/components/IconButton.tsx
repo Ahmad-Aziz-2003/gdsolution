@@ -22,7 +22,7 @@ const IconButton: FC<IconButtonProps> = ({
         relative flex items-center gap-3
         px-2 py-1.5 rounded-full text-sm font-normal text-white
         overflow-hidden border border-white/10
-        transition-all duration-200 hover:scale-105
+        transition-all duration-200 
         ${!hasCustomWidth ? "w-auto" : ""}
         ${className}
       `}
