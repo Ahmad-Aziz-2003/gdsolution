@@ -71,13 +71,15 @@ const ImageDiv: React.FC<{ imageSrc: string; imageAlt: string; delay?: number; a
 
 // Main Component
 const AIServicesSection: React.FC = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      offset: 120,
-    });
-  }, []);
+useEffect(() => {
+  AOS.init({
+    duration: 800,
+    once: false,  // allow multiple animations
+    offset: 120,
+    mirror: true, // 👈 ye add karo
+  });
+}, []);
+
 
   return (
     <div

@@ -17,7 +17,8 @@ export default function Home() {
     AOS.init({
       duration: 800, 
       once: false,   
-      offset: 100,   
+      offset: 100,  
+      mirror: true, 
     });
   }, []);
 
