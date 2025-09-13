@@ -11,8 +11,7 @@ const FeatureSection = () => {
   useEffect(() => {
     AOS.init({
       duration: 2000,
-      once: false,   // animate every time element comes into view
-      mirror: true,  // allows animation on scroll up
+      once: false,   // allows animation on scroll up
       offset: 120,
     });
   }, []);

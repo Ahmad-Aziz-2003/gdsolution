@@ -21,7 +21,7 @@ export default function ContactUs() {
       [e.target.name]: e.target.value,
     });
 
-    // Remove error when user types
+    
     setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
 

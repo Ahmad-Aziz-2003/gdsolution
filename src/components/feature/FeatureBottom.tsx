@@ -2,14 +2,12 @@
 import React from 'react';
 import Image from 'next/image';
 
-// Props for individual feature item
 interface FeatureListItemProps {
   icon: string;
   title: string;
   description: string;
 }
 
-// Single Feature Item
 const FeatureListItem: React.FC<FeatureListItemProps> = ({ icon, title, description }) => {
   return (
     <div className="flex flex-col items-start space-y- p-4 lg:p-2 gap-1 sm:gap-3">

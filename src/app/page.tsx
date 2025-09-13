@@ -15,9 +15,9 @@ import ServiceSection from "@/components/service/ServiceSection";
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 800, // animation duration
-      once: false,   // animate every time it comes into view
-      offset: 100,   // start animation a little before element enters viewport
+      duration: 800, 
+      once: false,   
+      offset: 100,   
     });
   }, []);
 

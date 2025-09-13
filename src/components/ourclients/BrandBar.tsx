@@ -13,7 +13,19 @@ const BrandBar: React.FC = () => {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
   return (
-    <div className="max-w-2xl mx-auto overflow-hidden mb-28">
+    <div
+      className="max-w-2xl mx-auto overflow-hidden mb-28 relative"
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
+        maskRepeat: "no-repeat",
+        WebkitMaskRepeat: "no-repeat",
+        maskSize: "100% 100%",
+        WebkitMaskSize: "100% 100%",
+      }}
+    >
       <div className="flex animate-scroll whitespace-nowrap">
         {duplicatedBrands.map((brand, index) => (
           <div
@@ -23,7 +35,7 @@ const BrandBar: React.FC = () => {
             <img
               src={brand.logo}
               alt={brand.name}
-              className="h-12 sm:h-20 opacity-70 hover:opacity-100 transition-opacity duration-200 filter grayscale hover:grayscale-0"
+              className="h-18 sm:h-28 opacity-70 hover:opacity-100 transition-opacity duration-200 filter grayscale hover:grayscale-0"
             />
           </div>
         ))}

@@ -14,7 +14,7 @@ const ClientsHeader = () => {
         className="object-cover object-center"
       />
 
-      {/* Gradient Overlay Image (imagbg.svg) */}
+  
       <Image
         src="/clients/gradient.png"
         alt="Gradient Overlay"

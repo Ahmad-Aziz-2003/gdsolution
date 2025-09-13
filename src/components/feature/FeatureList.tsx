@@ -2,9 +2,6 @@
 import React from 'react';
 import FeatureCard from './FeatureCard';
 
-
-
-// Feature data
 const featuresData = [
   {
     id: 1,
