@@ -16,11 +16,11 @@ const HeroSection: React.FC = () => {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white pt-14">
+    <div className="min-h-screen flex flex-col bg-black text-white pt-12">
       {/* ---------- Top Section ---------- */}
       <div className="flex flex-col items-center md:justify-center md:flex-1 px-4 sm:px-6">
         {/* Toggle */}
-        <div className="mt-12 sm:mt-24 mb-8 sm:mb-12">
+        <div className="mt-12 sm:mt-20 mb-8 sm:mb-0">
           <div className="relative inline-flex items-center bg-[#141810] rounded-full p-1 backdrop-blur-0">
             <button
               onClick={() => setIsAgents(true)}
@@ -59,7 +59,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* ---------- Bottom Section ---------- */}
-      <div className="relative flex -mt-4 flex-col items-center p-12 sm:p-24 w-full h-[50vh] sm:h-[65vh] md:h-[70vh] overflow-hidden">
+      <div className="relative flex -mt-10 flex-col items-center p-12 sm:p-24 w-full h-[50vh] sm:h-[65vh] md:h-[65vh] overflow-hidden">
         {/* Background image */}
         <Image
           src="/bghero.svg"
@@ -82,22 +82,28 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Infinite Scrolling Brands */}
-        <div className="max-w-2xl mx-auto absolute bottom-4 sm:bottom-6 left-0 right-0 overflow-hidden">
-          <div className="flex animate-scroll whitespace-nowrap">
-            {duplicatedBrands.map((brand, index) => (
-              <div
-                key={`${brand.name}-${index}`}
-                className="flex-shrink-0 mx-4 sm:mx-8 flex items-center md:justify-center"
-              >
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="h-12 sm:h-20 opacity-70 hover:opacity-100 transition-opacity duration-200 filter grayscale hover:grayscale-0"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+<div
+  className="max-w-2xl mx-auto absolute bottom-4 sm:bottom-15 left-0 right-0 overflow-hidden  [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%]"
+>
+  <div className="flex animate-scroll whitespace-nowrap">
+    {duplicatedBrands.map((brand, index) => (
+      <div
+        key={`${brand.name}-${index}`}
+        className="flex-shrink-0 mx-4 sm:mx-8 flex items-center md:justify-center"
+      >
+        <img
+          src={brand.logo}
+          alt={brand.name}
+          className="h-14 sm:h-28 opacity-70 hover:opacity-100 transition-opacity duration-200 filter grayscale hover:grayscale-0"
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+
       </div>
 
 
@@ -113,7 +119,7 @@ const HeroSection: React.FC = () => {
           }
         }
         .animate-scroll {
-          animation: scroll 25s linear infinite;
+          animation: scroll 15s linear infinite;
         }
         .animate-scroll:hover {
           animation-play-state: paused;

@@ -16,10 +16,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   imageAlt,
 }) => {
   return (
-    <div className="relative rounded-2xl bg-[#080808] overflow-hidden border-2 border-white/10">
+    <div className="relative rounded-2xl bg-[#080808] overflow-hidden border-2 border-white/10 group">
       {/* Gradient Top Border */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[3px]"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[3px] transition-all duration-300  group-hover:h-[3.5px] group-hover:w-4/5"
         style={{
           background:
             "linear-gradient(90deg, rgba(92, 95, 254, 0) 0%, #5C5FFE 50%, rgba(92, 95, 254, 0) 100%)",

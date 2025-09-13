@@ -35,7 +35,7 @@ export default function Home() {
         <ServiceSection />
       </div>
 
-      <div data-aos="fade-down" data-aos-delay="900">
+      <div data-aos="fade-up" data-aos-delay="900">
         <FeatureSection />
       </div>
 
@@ -43,13 +43,13 @@ export default function Home() {
         <ProcessSection />
       </div>
 
-      <div data-aos="fade-up" data-aos-delay="1500">
+  
         <TestimonialSection />
-      </div>
+     
 
-      <div data-aos="fade-up" data-aos-delay="1800">
+   
         <ReadyToSave />
-      </div>
+  
     </div>
   );
 }

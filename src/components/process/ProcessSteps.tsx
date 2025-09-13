@@ -13,16 +13,15 @@ interface InsightCardProps {
 
 const InsightCard: React.FC<InsightCardProps> = ({ iconSrc, title, description }) => {
   return (
-    <div className="relative flex flex-col items-center text-center p-8 bg-[#080808] rounded-lg border border-white/10 overflow-hidden">
+    <div className="relative flex flex-col items-center text-center p-8 bg-[#080808] rounded-lg border border-white/10 overflow-hidden group">
       {/* Top Gradient Border */}
-    <div
-  className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1.3px]"
-  style={{
-    background:
-      "linear-gradient(90deg, rgba(92, 95, 254, 0) 0%, #5C5FFE 50%, rgba(92, 95, 254, 0) 100%)",
-  }}
-/>
-
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1.3px] transition-all duration-300 group-hover:h-[3px] group-hover:w-4/5"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(92, 95, 254, 0) 0%, #5C5FFE 50%, rgba(92, 95, 254, 0) 100%)",
+        }}
+      />
 
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
@@ -36,30 +35,31 @@ const InsightCard: React.FC<InsightCardProps> = ({ iconSrc, title, description }
       </div>
 
       {/* Content */}
-<div
-  className="w-12 h-12 mb-6 rounded-full bg-gradient-to-b from-[#5C5FFE] to-[#A3A5FF] flex items-center justify-center"
-  style={{
-    boxShadow: `
-      0px 10px 18px -1.25px #4F1AD661,
-      0px 2.29px 4.12px -0.83px #4F1AD62E,
-      0px 0.6px 1.08px -0.42px #4F1AD624
-    `,
-  }}
->
-  <Image
-    src={iconSrc}
-    alt={`${title} icon`}
-    width={24}
-    height={24}
-    className="text-white"
-  />
-</div>
+      <div
+        className="w-12 h-12 mb-6 rounded-full bg-gradient-to-b from-[#5C5FFE] to-[#A3A5FF] flex items-center justify-center"
+        style={{
+          boxShadow: `
+            0px 10px 18px -1.25px #4F1AD661,
+            0px 2.29px 4.12px -0.83px #4F1AD62E,
+            0px 0.6px 1.08px -0.42px #4F1AD624
+          `,
+        }}
+      >
+        <Image
+          src={iconSrc}
+          alt={`${title} icon`}
+          width={24}
+          height={24}
+          className="text-white"
+        />
+      </div>
 
-      <h3 className="text-2xl  text-white mb-4">{title}</h3>
+      <h3 className="text-2xl text-white mb-4">{title}</h3>
       <p className="text-offwhite leading-relaxed max-w-sm">{description}</p>
     </div>
   );
 };
+
 
 
 
